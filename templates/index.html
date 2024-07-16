@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fish Species Prediction</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fish Species Prediction</h1>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="length1">Length1:</label>
+                <input type="text" id="length1" name="length1" required>
+            </div>
+            <div class="form-group">
+                <label for="length2">Length2:</label>
+                <input type="text" id="length2" name="length2" required>
+            </div>
+            <div class="form-group">
+                <label for="length3">Length3:</label>
+                <input type="text" id="length3" name="length3" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height:</label>
+                <input type="text" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="width">Width:</label>
+                <input type="text" id="width" name="width" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight" required>
+            </div>
+            <button type="submit">Predict Species</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData.entries());
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formObject)
+            });
+            const result = await response.json();
+            document.getElementById('result').textContent = `Predicted Species: ${result.species}`;
+        });
+    </script>
+</body>
+</html>

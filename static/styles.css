@@ -1,0 +1,52 @@
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* White text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center align content horizontally */
+    align-items: center; /* Center align content vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #333333; /* Darker background for container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* White shadow for contrast */
+    text-align: center; /* Center align text inside container */
+}
+
+/* Form styles */
+form {
+    margin-top: 20px;
+}
+
+/* Input field styles */
+input[type=text], input[type=number] {
+    width: calc(100% - 20px); /* Adjust width minus padding */
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 4px;
+    background-color: #444444; /* Darker background for inputs */
+    color: #ffffff; /* White text color for inputs */
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50; /* Green button background */
+    color: white; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darken on hover */
+}
